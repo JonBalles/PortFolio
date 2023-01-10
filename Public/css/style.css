@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+
+header {
+    width: 100%;
+}
+
+header section.presentacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 32px;
+    background-color: blueviolet;
+}
+
+header nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+header nav a{
+    padding: 10px;
+    font-size: 48px;
+    border-right: 1px black solid;
+
+}
+
+header nav a:last-child{
+    border-right: none;
+}
