@@ -1,9 +1,10 @@
+
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    font-family: 'Open Sans', sans-serif;
 }
 
 img{
@@ -12,10 +13,14 @@ img{
 
 a{
     color: var(--lila);
+    text-decoration: none;
+}
+
+h2, h3, p{
+    text-align: center;
 }
 
 :root{
-
     --crema: #edd58f;
     --crema2: #c2bf92 ;
     --verdeagua: #66ac92 ;
@@ -24,35 +29,45 @@ a{
 }
 
 /* HEADER */
-
 header {
     width: 100%;
+    height: 150px;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
 }
 
 header section.presentacion{
-    display: flex;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
-    background-color: black;
+    font-weight: 600;
     color: var(--lila);
+    height: 100%;
+    width: 100%;
+}
+
+header .options{
+    display: flex;
+    flex-direction: row;
+    color: azure;
 }
 
 /* MAIN */
 
-main section.info div{
-    background:linear-gradient(var(--crema), var(--crema2));
-    border-top: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 15px;
-}
 main h2 {
     padding: 5px 10px 5px;
 }
 
-main p {
-    padding: 5px 10px 5px;
+.nota{
+    display: flex;
+    background:linear-gradient(var(--crema), var(--crema2));
+    border-top: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 15px;
 }
 
 
@@ -63,21 +78,17 @@ footer {
     height: 100%;
     padding-top: 10px;
     background-color: black;
-
 }
 footer nav{
     display:flex;
     justify-content: center;
-    align-items: center;
-   
-    
+    align-items: center;  
 }
 
 footer nav a{
     padding: 10px;
     font-size: 48px;
     border-right: 1px black solid;
-
 }
 
 footer nav a:last-child{
@@ -85,3 +96,130 @@ footer nav a:last-child{
 }
 
 
+
+
+
+/* Mi CV */
+.descarga{
+    background-color: #66ac92;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.descarga:hover{
+background-color: #641f5e;
+text-decoration: tomato;
+
+}
+
+/* Conocimientos */
+.skills {
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 30px;
+    }
+
+.skills h3{
+    position: relative;
+    bottom: -10;
+}
+
+/* tarjetas con sombra */
+
+article{
+    position: relative;
+    width: 100%;
+    transition: all .3s ease;
+}
+
+article img:first-child{
+    box-shadow: 0 60px 60px -60px
+    rgba(0, 30, 255, 0.5);
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%;
+}
+
+article img:last-child{
+    position: absolute;
+    width: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%);
+    transition: .3s ease;
+    opacity: 0;
+}
+
+article:hover {
+ transform: perspective(250px)
+ rotateX(10deg)
+ translateY(-5%)
+ translateZ(0);
+
+}
+
+article::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom,
+    transparent 10%,
+    rgba(0,0,0,0.5) 10%,
+    rgba(0,0,0) 60%);
+    opacity: 0;
+}
+
+article:hover::before{
+    opacity: 1;
+}
+
+article:hover img:last-child {
+    opacity: 1;
+    transform: translateY(10%);
+}
+
+
+@media (min-width:600px){
+
+/* tarjetas con sombra */
+    article {
+        width: 250px;
+    }
+    
+    article img:last-child{
+    width: 200px;
+    }
+
+    article:hover {
+        transform: perspective(250px)
+    }
+
+
+/* Notas */
+.aboutMe{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+.nota{
+    margin: 20px;
+    width: 250px;
+    height: 180px;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+    
+}
+
+}
